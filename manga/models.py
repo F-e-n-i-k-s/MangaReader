@@ -17,7 +17,7 @@ class Manga(models.Model):
     title = models.CharField(max_length=250)
     description = models.TextField()
     rating = models.FloatField(max_length=1)
-    poster = models.CharField(max_length=250)
+    poster = models.ImageField(upload_to='upload/manga/', blank=True, verbose_name=title)
     header = models.CharField(max_length=250)
     genre = models.ManyToManyField(Genre)
     author = models.ManyToManyField(Author)
